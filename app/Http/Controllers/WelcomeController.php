@@ -44,7 +44,7 @@ class WelcomeController extends Controller
     }
     
     public function confirmNameget() {
-        $ideas = Idea::orderByRaw("RAND()")
+        $ideas = Idea::orderByRaw("RANDOM()")
                      ->take(5)
                      ->get();
         return view('evals.create', [
